@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Components</title>
+    <script src="./tooltip-pure-web-component.js"></script>
+    <script src="./custom-link.js"></script>
+    <style>
+        div {
+            border: 2px solid orange;
+        }
+    </style>
+</head>
+<body>
+    <!-- This is a way to keep HTML elements here instead of defining 
+        it all in JS to reduce complexity  --- Taken care in JS file this.shadowRoot.innerHTML -->
+    <!-- Slot gives us the ability to pass text between custom elements -->
+    <!-- <template id="tooltip-template">
+        <slot>Default Slot</slot>
+        <span>(?)</span>
+    </template> -->
+    <p><tooltip-web-component text="Web Component is a standard">Web Components</tooltip-web-component> are awesome!</p>
+    <p><tooltip-web-component></tooltip-web-component> This is resuing the tooltip Components</p>
+    <div>This doesnt get shadowDom Style</div>
+    <a is="cs-confirm-link" href="https://www.google.com/">Google</a>
+</body>
+</html>
